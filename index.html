@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entretenimiento las 24hs</title>
+  <style>
+    html, body {
+      height: 200vh;
+      margin: 0; padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background: black;
+    }
+    video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7); /* Más oscuro */
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 90%;
+  color: #fff; /* Blanco puro */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); /* Sombra para mejor contraste */
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.content p {
+  font-size: 1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+}
+   .btn-whatsapp {
+  background: #25D366;
+  color: white;
+  padding: 1.2rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 5px 10px rgba(37,211,102,0.5);
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-whatsapp svg {
+  flex-shrink: 0;
+}
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0,0,0,0.75);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      z-index: 20;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      
+      /* Nuevo estilos para layout horizontal */
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 320px;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    }
+    .notification.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .notification img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .notification .text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .notification .icon {
+      margin-right: 6px;
+    }
+    @media (max-width: 600px) {
+      .content h1 {
+        font-size: 1.5rem;
+      }
+      .btn-whatsapp {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
+
+    
+  </style>
+</head>
+<body>
+
+<video id="bg-video" muted playsinline preload="auto" src="/vid/video2.mp4"></video>
+
+<div class="content">
+  <h1>20% EXTRA COMO BIENVENIDA!</h1>
+  <p>ATENCIÓN LAS 24HS LOS 7 DÍAS DE LA SEMANA!<br>PAGOS AL INSTANTE!</p>
+  <p>
+
+  </p>
+  <a href="https://wa.me/549XXXXXXXXXX?text=Hola%20vengo%20de%20parte%20de" target="_blank" rel="noopener" class="btn-whatsapp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+    <path d="M12.04 2C6.548 2 2.05 6.497 2.05 11.988c0 2.108.61 4.128 1.76 5.877l-1.15 4.218 4.32-1.134a10.01 10.01 0 0 0 5.06 1.356h.003c5.49 0 9.988-4.497 9.988-9.988S17.53 2 12.04 2zm0 18.316a8.25 8.25 0 0 1-4.21-1.157l-.302-.18-2.56.672.684-2.494-.196-.312a8.248 8.248 0 0 1-1.373-4.483c0-4.566 3.715-8.281 8.282-8.281s8.282 3.715 8.282 8.281-3.715 8.281-8.282 8.281zm4.528-6.224c-.248-.124-1.47-.726-1.698-.808-.228-.084-.395-.124-.562.125s-.644.808-.79.974c-.145.166-.29.186-.538.062a6.78 6.78 0 0 1-1.99-1.226 7.432 7.432 0 0 1-1.376-1.705c-.144-.248-.015-.382.11-.506.113-.113.25-.294.373-.44.124-.145.165-.248.248-.414.083-.166.042-.311-.02-.435-.063-.124-.562-1.36-.77-1.862-.202-.485-.408-.42-.562-.428-.145-.007-.31-.01-.476-.01a.916.916 0 0 0-.664.31c-.228.248-.872.852-.872 2.074 0 1.222.892 2.402 1.016 2.568.124.166 1.753 2.675 4.25 3.748.595.257 1.06.41 1.423.525.597.19 1.14.164 1.57.1.48-.072 1.47-.602 1.675-1.184.206-.582.206-1.08.145-1.185-.06-.103-.227-.165-.476-.289z"/>
+  </svg>
+  <span>Enviar WhatsApp </span>
+</a>
+
+</div>
+
+<div id="notification" class="notification"></div>
+
+<script>
+  const nombres = ["Juan Carlos", "Lucía M.", "Pedro A.", "María L.", "Carlos B.", "Ana P.", "Sofía G.", "Federico T.", "Romina S.", "Martín D.", "Valentina R.", "Diego F.", "Julieta N.", "Andrés E.", "Camila V.", "Lucas M.", "Paula J.", "Nicolás H.", "Florencia C.", "Matías K.", "Carla Z.", "Emilia B.", "Joaquín T.", "Agustina Q.", "Tomás L.", "Verónica G.", "Benjamín A.", "Milagros Y.", "Ricardo P."];
+
+  const ciudades = ["CABA", "Buenos Aires", "La Plata", "Mar del Plata", "Salta", "Córdoba", "Rosario", "Santa Fe", "Mendoza", "San Juan", "San Luis", "Tucumán", "Santiago del Estero", "La Rioja", "Catamarca", "Jujuy", "Formosa", "Chaco", "Corrientes", "Misiones", "Entre Ríos", "Neuquén", "Río Negro", "Chubut", "Santa Cruz", "Tierra del Fuego", "Bahía Blanca", "Resistencia", "Posadas", "Trelew"];
+
+  const casinoImages = [
+    "https://static.casino.guru/pict/1077550/2-Sweet-4-U.png?timestamp=1736887411000&imageDataId=1154474&width=320&height=247",
+    "https://static.casino.guru/pict/165466/Gates-of-Olymps.png?timestamp=1653449170000&imageDataId=218130&width=270&height=208",
+    "https://ecdn.speedsize.com/146a650b-0738-4cda-9854-934a12c53a89/https://www.codere.bet.ar/lobby_tiles/MGS9MasksofFire_Square.jpg",
+    "https://static.templodeslots.es/pict/562516/Sweet-Crush.png?timestamp=1694440795000&imageDataId=610244&width=270&height=208",
+    "https://i.pinimg.com/736x/68/0f/61/680f617e5e94e7f104be209e3942668c.jpg",
+    "https://static.casino.guru/pict/181096/3-Clown-Monty.png?timestamp=1653451382000&imageDataId=224893&width=320&height=247",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThm4B5BW-kVxkGq4z9pRfpd9azxfReieKUwQ&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpK4byCnnWVkrbZNrgOiH9cbm4atUXducn5Q&s",
+    "https://ecdn.speedsize.com/146a650b-0738-4cda-9854-934a12c53a89/https://www.codere.bet.ar/lobby_tiles/MGSQueenofAlexandria_Square.jpg"
+  ];
+
+  const video = document.getElementById('bg-video');
+
+  video.addEventListener('loadedmetadata', () => {
+    const duration = video.duration;
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const scrollFraction = scrollTop / maxScroll;
+      video.currentTime = duration * scrollFraction;
+    });
+  });
+
+  // Muestra notificación con imagen y íconos 🎁 y 📍 delante del texto
+  function mostrarNotificacion() {
+    const nombre = nombres[Math.floor(Math.random() * nombres.length)];
+    const ciudad = ciudades[Math.floor(Math.random() * ciudades.length)];
+    const monto = Math.floor(Math.random() * 200000) + 10000;
+    const minutos = Math.floor(Math.random() * 59) + 1;
+
+    const imgUrl = casinoImages[Math.floor(Math.random() * casinoImages.length)];
+
+    const noti = document.getElementById('notification');
+    noti.innerHTML = `
+      <img src="${imgUrl}" alt="Premio Casino" />
+      <div class="text">
+        <div><span class="icon">🎁</span><strong>${nombre}</strong></div>
+        <div>Acaba de retirar $${monto.toLocaleString()}</div>
+        <div><span class="icon">📍</span>${ciudad} - Hace ${minutos}min</div>
+      </div>
+    `;
+    noti.classList.add('show');
+
+    setTimeout(() => {
+      noti.classList.remove('show');
+    }, 4000);
+  }
+
+  setInterval(mostrarNotificacion, 6000); // Cada 6 segundos
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
